@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestTodoListMe" verbose="2" >
+    <test name="Test1" >
+        <classes>
+            <class name="autotest.todo.list.tests.TodoPanelTest"/>
+            <class name="autotest.todo.list.tests.ManagerPanelTest"/>
+            <class name="autotest.todo.list.tests.CategoryPanelTest"/>
+            <class name="autotest.todo.list.tests.MoveTest"/>
+            <class name="autotest.todo.list.tests.OpenPageTest"/>
+            <class name="autotest.todo.list.tests.ListInRemoteWindowTest"/>
+            <class name="autotest.todo.list.tests.PrintTest"/>
+        </classes>
+    </test>
+</suite>
