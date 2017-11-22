@@ -10,6 +10,7 @@
             <class name="autotest.todo.list.tests.OpenPageTest"/>
             <class name="autotest.todo.list.tests.ListInRemoteWindowTest"/>
             <class name="autotest.todo.list.tests.PrintTest"/>
+            <class name="autotest.todo.list.tests.TomorrowPanelTest"/>
         </classes>
     </test>
 </suite>

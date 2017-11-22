@@ -1,5 +1,6 @@
 package autotest.todo.list.tests;
 
+
 import autotest.todo.list.page.MainPage;
 import autotest.todo.list.panels.categoryPanel.MyCategory;
 import org.testng.annotations.BeforeTest;
@@ -8,7 +9,6 @@ import org.testng.annotations.Test;
 import static com.codeborne.selenide.Selenide.page;
 import static org.testng.AssertJUnit.assertTrue;
 
-
 public class CategoryPanelTest extends BaseTest {
 
     @BeforeTest
@@ -16,7 +16,7 @@ public class CategoryPanelTest extends BaseTest {
         initialize();
     }
 
-    @Test
+    @Test(description = "Create category")
     public void createCategory() {
         MainPage mainPage = page(MainPage.class);
         mainPage.createNewCategory(getcategoryName());
@@ -24,7 +24,7 @@ public class CategoryPanelTest extends BaseTest {
         assertTrue(myCategory.getByName(getcategoryName()).isDisplayed());
     }
 
-    @Test
+    @Test(description = "Delete category")
     public void deleteCategory() {
         MainPage mainPage = page(MainPage.class);
         mainPage.createNewCategory(getcategoryName());
@@ -34,3 +34,5 @@ public class CategoryPanelTest extends BaseTest {
         assertTrue(myCategory.getMyListCategory().isEmpty());
     }
 }
+
+

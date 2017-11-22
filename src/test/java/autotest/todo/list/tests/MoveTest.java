@@ -4,35 +4,38 @@ import autotest.todo.list.page.MainPage;
 import autotest.todo.list.panels.categoryPanel.MyCategory;
 import autotest.todo.list.panels.managerPanel.MyList;
 import autotest.todo.list.panels.todoPanel.ListPanel;
+import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.page;
-import static org.testng.AssertJUnit.assertEquals;
-import static org.testng.AssertJUnit.assertTrue;
+import static com.codeborne.selenide.Selenide.sleep;
+import static org.testng.Assert.assertTrue;
 
+public class MoveTest extends BaseTest {
 
-public class MoveTest extends BaseTest{
 
     @BeforeTest
     public void beforeTest() throws Throwable {
         initialize();
     }
 
-    @Test
+    @Test(description = "Move list to category")
     public void moveTodoListToCategory() {
         MainPage mainPage = page(MainPage.class);
         mainPage.createNewList(getlistName());
         MyList myList = page(MyList.class);
-        assertTrue(myList.getByName(getlistName()).isDisplayed());
+        AssertJUnit.assertTrue(myList.getByName(getlistName()).isDisplayed());
         mainPage.createNewTodo(gettodoInMyList());
         ListPanel listPanel = page(ListPanel.class);
-        assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
+        AssertJUnit.assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
         listPanel.completeTodo(gettodoInMyList());
-        assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
+        AssertJUnit.assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
+        sleep(3000);
         mainPage.createNewCategory(getcategoryName());
         MyCategory myCategory = page(MyCategory.class);
-        assertTrue(myCategory.getByName(getcategoryName()).isDisplayed());
-        myList.moveTodo(getlistName(), getcategoryName());
-        assertEquals(myCategory.containerOfCategory(getlistName()), getcategoryName());    }
+        AssertJUnit.assertTrue(myCategory.getByName(getcategoryName()).isDisplayed());
+        myList.moveTodo(getlistName());
+        assertTrue(myList.getByName(getlistName()).isDisplayed());
+    }
 }

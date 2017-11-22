@@ -11,10 +11,12 @@ import java.util.Properties;
 import static com.codeborne.selenide.Selenide.close;
 import static com.codeborne.selenide.Selenide.open;
 
+
 public class BaseTest {
 
+
     protected static Properties DATA;
-    private static  final String URL = "http://todolistme.net/";
+    protected static final String URL = "http://todolistme.net/";
 
     public void initialize() throws Throwable {
         DATA = new Properties();
@@ -28,29 +30,29 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
     }
 
-    @BeforeMethod
-    public void init () {
+    @BeforeMethod(description = "Chrome go to todolistme.net")
+    public void init() {
         open(URL);
     }
 
-    @AfterMethod
-    public void dispose () {
+    @AfterMethod(description = "Chrome close window")
+    public void dispose() {
         close();
     }
 
-    String gettodoName(){
+    String gettodoName() {
         return DATA.getProperty("TODO_NAME");
     }
 
-    String getlistName(){
+    String getlistName() {
         return DATA.getProperty("LIST_NAME");
     }
-    String gettodoInMyList(){
+
+    String gettodoInMyList() {
         return DATA.getProperty("TODO_NAME_IN_MY_LIST");
     }
 
-    String getcategoryName(){
+    String getcategoryName() {
         return DATA.getProperty("CATEGORY_NAME");
     }
 }
-

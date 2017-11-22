@@ -9,15 +9,14 @@ import org.testng.annotations.Test;
 import static com.codeborne.selenide.Selenide.page;
 import static org.testng.AssertJUnit.assertTrue;
 
-
-public class TodoPanelTest extends BaseTest{
+public class TodoPanelTest extends BaseTest {
 
     @BeforeTest
     public void beforeTest() throws Throwable {
         initialize();
     }
 
-    @Test
+    @Test(description = "Create todo")
     public void createTodo() {
         MainPage mainPage = page(MainPage.class);
         mainPage.createNewTodo(gettodoName());
@@ -25,7 +24,7 @@ public class TodoPanelTest extends BaseTest{
         assertTrue(listPanel.getByName(gettodoName()).isDisplayed());
     }
 
-    @Test
+    @Test(description = "Complete todo")
     public void completeTodo() {
         MainPage mainPage = page(MainPage.class);
         mainPage.createNewTodo(gettodoName());
@@ -36,7 +35,7 @@ public class TodoPanelTest extends BaseTest{
         assertTrue(donePanel.getByName(gettodoName()).isDisplayed());
     }
 
-    @Test
+    @Test(description = "Delete todo")
     public void deleteTodo() {
         MainPage mainPage = page(MainPage.class);
         mainPage.createNewTodo(gettodoName());
@@ -49,3 +48,4 @@ public class TodoPanelTest extends BaseTest{
         assertTrue(donePanel.getList().isEmpty());
     }
 }
+

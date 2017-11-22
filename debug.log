@@ -1,0 +1,30 @@
+[1122/134227.070:ERROR:process_info.cc(632)] range at 0xc4ba339600000000, size 0x26b fully unreadable
+[1122/134227.071:ERROR:process_info.cc(632)] range at 0xc4ba33b600000000, size 0x26b fully unreadable
+[1122/134227.071:ERROR:process_info.cc(632)] range at 0x0, size 0x26b fully unreadable
+[1122/134227.082:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Anna\AppData\Local\Temp\scoped_dir4868_15688\Crashpad\settings.dat: Системе не удается найти указанный путь. (0x3)
+[1122/134227.082:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Anna\AppData\Local\Temp\scoped_dir4868_15688\Crashpad\reports\03ec8250-6e7a-414f-9489-b582c0e6339e.dmp: Системе не удается найти указанный путь. (0x3)
+[1122/134227.082:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[1122/134629.373:ERROR:process_info.cc(632)] range at 0xe606330400000000, size 0x158 fully unreadable
+[1122/134629.373:ERROR:process_info.cc(632)] range at 0xe606332400000000, size 0x158 fully unreadable
+[1122/134629.373:ERROR:process_info.cc(632)] range at 0x0, size 0x158 fully unreadable
+[1122/134720.853:ERROR:process_info.cc(632)] range at 0x477e330800000000, size 0x2c6 fully unreadable
+[1122/134720.853:ERROR:process_info.cc(632)] range at 0x477e332800000000, size 0x2c6 fully unreadable
+[1122/134720.853:ERROR:process_info.cc(632)] range at 0x0, size 0x2c6 fully unreadable
+[1122/163951.551:ERROR:process_info.cc(632)] range at 0x8239330400000000, size 0x232 fully unreadable
+[1122/163951.551:ERROR:process_info.cc(632)] range at 0x8239332400000000, size 0x232 fully unreadable
+[1122/163951.551:ERROR:process_info.cc(632)] range at 0x0, size 0x232 fully unreadable
+[1122/163951.562:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Anna\AppData\Local\Temp\scoped_dir5840_19580\Crashpad\settings.dat: Системе не удается найти указанный путь. (0x3)
+[1122/163951.562:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Anna\AppData\Local\Temp\scoped_dir5840_19580\Crashpad\reports\a1022274-c19b-4728-a63a-0578c28337b0.dmp: Системе не удается найти указанный путь. (0x3)
+[1122/163951.562:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[1122/164000.142:ERROR:process_info.cc(632)] range at 0xaad8330600000000, size 0x1fc fully unreadable
+[1122/164000.142:ERROR:process_info.cc(632)] range at 0xaad8332600000000, size 0x1fc fully unreadable
+[1122/164000.142:ERROR:process_info.cc(632)] range at 0x0, size 0x1fc fully unreadable
+[1122/164028.562:ERROR:process_info.cc(632)] range at 0xc36b330800000000, size 0x27d fully unreadable
+[1122/164028.562:ERROR:process_info.cc(632)] range at 0xc36b332800000000, size 0x27d fully unreadable
+[1122/164028.562:ERROR:process_info.cc(632)] range at 0x0, size 0x27d fully unreadable
+[1122/164103.978:ERROR:process_info.cc(632)] range at 0xccdb330600000000, size 0x1a3 fully unreadable
+[1122/164103.978:ERROR:process_info.cc(632)] range at 0xccdb332600000000, size 0x1a3 fully unreadable
+[1122/164103.978:ERROR:process_info.cc(632)] range at 0x0, size 0x1a3 fully unreadable
+[1122/164103.987:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Anna\AppData\Local\Temp\scoped_dir11100_9420\Crashpad\settings.dat: Системе не удается найти указанный путь. (0x3)
+[1122/164103.987:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Anna\AppData\Local\Temp\scoped_dir11100_9420\Crashpad\reports\8ad3cff8-e71f-4996-8c29-f4d3bcb83c1b.dmp: Системе не удается найти указанный путь. (0x3)
+[1122/164103.987:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed

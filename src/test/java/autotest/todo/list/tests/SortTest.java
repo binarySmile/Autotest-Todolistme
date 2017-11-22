@@ -9,8 +9,8 @@ import static org.testng.Assert.assertTrue;
 
 public class SortTest extends BaseTest {
 
-    @Test
-    public void todosList(){
+    @Test(description = "Sort todo list")
+    public void sortTodosList() {
         ListPanel listPanel = page(ListPanel.class);
         assertTrue(listPanel.getList().equals(listPanel.normalSortList()));
         assertTrue(listPanel.getList().equals(listPanel.alphabeticalSortList()));

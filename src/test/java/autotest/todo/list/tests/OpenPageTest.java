@@ -2,6 +2,7 @@ package autotest.todo.list.tests;
 
 
 import autotest.todo.list.page.MainPage;
+import autotest.todo.list.page.PrintPage;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.page;
@@ -11,24 +12,24 @@ public class OpenPageTest extends BaseTest {
     String titleName = "Today's Tasks";
 
     @Test
-    public void checkOpenPage(){
+    public void checkOpenPage() {
         MainPage mainPage = page(MainPage.class);
         mainPage.todoListTitleName();
         assertTrue(mainPage.getByName(titleName).isDisplayed());
     }
 
     @Test
-    public void availabilityOfSortButton(){
+    public void availabilityOfSortButton() {
         MainPage mainPage = page(MainPage.class);
         mainPage.sortButton();
         assertTrue(mainPage.sortButton().isDisplayed());
     }
 
     @Test
-    public void availabilityOfPrintButton(){
-        MainPage mainPage = page(MainPage.class);
-        mainPage.printButton();
-        assertTrue(mainPage.printButton().isDisplayed());
+    public void availabilityOfPrintButton() {
+        PrintPage printPage = page(PrintPage.class);
+        printPage.printButton();
+        assertTrue(printPage.printButton().isDisplayed());
     }
 
     @Test

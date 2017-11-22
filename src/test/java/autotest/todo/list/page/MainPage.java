@@ -1,6 +1,7 @@
 package autotest.todo.list.page;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.text;
@@ -20,36 +21,28 @@ public class MainPage {
     @FindBy(id = "adddivider")
     private SelenideElement addNewCategoryButton;
 
-    @FindBy(id ="printbutton")
-    private SelenideElement printButton;
-
-    @FindBy(id ="remotebutton")
-    private SelenideElement remoteButton;
-
     @FindBy(id = "mytitle")
     private SelenideElement todoListTitle;
 
-    @FindBy(id ="sortbutton")
+    @FindBy(id = "sortbutton")
     private SelenideElement sortButton;
 
 
+    @Step("Create todo: {name}")
     public void createNewTodo(String newTodoName) {
-
         todoInput.val(newTodoName).pressEnter();
     }
 
+    @Step("Create list: {name}")
     public void createNewList(String listName) {
         addNewTodoListButton.click();
         newNameInput.val(listName).pressEnter();
     }
 
+    @Step("Create category: {name}")
     public void createNewCategory(String categoryName) {
         addNewCategoryButton.click();
         newNameInput.shouldBe(visible).val(categoryName).pressEnter();
-    }
-
-    public void createPagePrint(){
-        printButton.click();
     }
 
     public SelenideElement todoListTitleName() {
@@ -61,23 +54,15 @@ public class MainPage {
         return todoListTitle.shouldHave(text(todoListTitleName));
     }
 
-    public void createListInRemoteWindow() {
-        remoteButton.click();
-    }
-
-    public  SelenideElement sortButton(){
+    public SelenideElement sortButton() {
         return sortButton;
     }
 
-    public SelenideElement printButton(){
-        return printButton;
-    }
-
-    public SelenideElement addListButton(){
+    public SelenideElement addListButton() {
         return addNewTodoListButton;
     }
 
-    public SelenideElement addCategoryButton(){
+    public SelenideElement addCategoryButton() {
         return addNewCategoryButton;
     }
 }
