@@ -27,6 +27,7 @@ public class DonePanel implements Panel {
     @Step("Delete todo: {name}")
     public void deleteTodo(String todoName) {
         getByName(todoName).hover();
+        getByName(todoName).click();
         getByName(todoName).$("img").click();
     }
 }

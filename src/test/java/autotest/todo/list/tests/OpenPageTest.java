@@ -9,13 +9,19 @@ import static com.codeborne.selenide.Selenide.page;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class OpenPageTest extends BaseTest {
-    String titleName = "Today's Tasks";
 
     @Test
     public void checkOpenPage() {
         MainPage mainPage = page(MainPage.class);
         mainPage.todoListTitleName();
         assertTrue(mainPage.getByName(titleName).isDisplayed());
+    }
+
+    @Test
+    public void checkActivityOfInputField(){
+        MainPage mainPage = page(MainPage.class);
+        mainPage.todoInput();
+        assertTrue(mainPage.todoInput().isDisplayed());
     }
 
     @Test

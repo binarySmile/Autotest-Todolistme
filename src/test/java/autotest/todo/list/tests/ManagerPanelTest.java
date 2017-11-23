@@ -3,11 +3,11 @@ package autotest.todo.list.tests;
 import autotest.todo.list.page.MainPage;
 import autotest.todo.list.panels.managerPanel.MyList;
 import autotest.todo.list.panels.todoPanel.ListPanel;
-import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.page;
+import static org.testng.Assert.assertTrue;
 
 public class ManagerPanelTest extends BaseTest {
 
@@ -21,7 +21,7 @@ public class ManagerPanelTest extends BaseTest {
         MainPage mainPage = page(MainPage.class);
         mainPage.createNewList(getlistName());
         MyList myList = page(MyList.class);
-        AssertJUnit.assertTrue(myList.getByName(getlistName()).isDisplayed());
+        assertTrue(myList.getByName(getlistName()).isDisplayed());
     }
 
     @Test(description = "Create todo in new list")
@@ -29,11 +29,11 @@ public class ManagerPanelTest extends BaseTest {
         MainPage mainPage = page(MainPage.class);
         mainPage.createNewList(getlistName());
         MyList myList = page(MyList.class);
-        AssertJUnit.assertTrue(myList.getByName(getlistName()).isDisplayed());
+        assertTrue(myList.getByName(getlistName()).isDisplayed());
         mainPage.createNewTodo(gettodoInMyList());
         ListPanel listPanel = page(ListPanel.class);
-        AssertJUnit.assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
+        assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
         listPanel.completeTodo(gettodoInMyList());
-        AssertJUnit.assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
+        assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
     }
 }

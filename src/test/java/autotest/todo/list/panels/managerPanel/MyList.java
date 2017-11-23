@@ -20,10 +20,6 @@ public class MyList implements Panel {
     @FindBy(css = "#container_1")
     private SelenideElement myListCategory;
 
-    public SelenideElement getByListNameInCategory(String listName) {
-        return myListInCategory.filter(text(listName)).shouldHaveSize(1).last();
-    }
-
     @Override
     public ElementsCollection getList() {
         return listManager;
@@ -34,13 +30,8 @@ public class MyList implements Panel {
         return listManager.filter(text(listName)).shouldHaveSize(1).last();
     }
 
-
-
     @Step("Move list to category")
-//    public void moveTodo(String listName) {
-//        getByName(listName).dragAndDropTo(page(MyCategory.class).getByListNameInCategory(listName));
-//    }
-    public void moveTodo(String listName){
+    public void moveTodo(String listName) {
         getByName(listName).dragAndDropTo(myListCategory);
     }
 }

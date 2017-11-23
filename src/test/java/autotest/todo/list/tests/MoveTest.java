@@ -4,7 +4,6 @@ import autotest.todo.list.page.MainPage;
 import autotest.todo.list.panels.categoryPanel.MyCategory;
 import autotest.todo.list.panels.managerPanel.MyList;
 import autotest.todo.list.panels.todoPanel.ListPanel;
-import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -25,16 +24,16 @@ public class MoveTest extends BaseTest {
         MainPage mainPage = page(MainPage.class);
         mainPage.createNewList(getlistName());
         MyList myList = page(MyList.class);
-        AssertJUnit.assertTrue(myList.getByName(getlistName()).isDisplayed());
+        assertTrue(myList.getByName(getlistName()).isDisplayed());
         mainPage.createNewTodo(gettodoInMyList());
         ListPanel listPanel = page(ListPanel.class);
-        AssertJUnit.assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
+        assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
         listPanel.completeTodo(gettodoInMyList());
-        AssertJUnit.assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
+        assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
         sleep(3000);
         mainPage.createNewCategory(getcategoryName());
         MyCategory myCategory = page(MyCategory.class);
-        AssertJUnit.assertTrue(myCategory.getByName(getcategoryName()).isDisplayed());
+        assertTrue(myCategory.getByName(getcategoryName()).isDisplayed());
         myList.moveTodo(getlistName());
         assertTrue(myList.getByName(getlistName()).isDisplayed());
     }

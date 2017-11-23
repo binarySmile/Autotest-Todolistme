@@ -17,20 +17,26 @@ public class RemotePage extends BaseTest {
     @FindBy(id = "remotebutton")
     private SelenideElement remoteButton;
 
+    @FindBy(id="listmenucontainer")
+    public SelenideElement listMenuContainer;
+
     @Step("Go from mainpage to remotepage")
     public void openRemotePage() throws InterruptedException {
         WebDriver driver = WebDriverRunner.getWebDriver();
         get(URL);
         String mainPage = driver.getWindowHandle();
         remoteButton.click();
-        Set <String> windows = driver.getWindowHandles();
+        Set<String> windows = driver.getWindowHandles();
         for (String child : windows) {
             if (!mainPage.equalsIgnoreCase(child)) {
                 driver.switchTo().window(child);
                 Thread.sleep(3000);
-                driver.close();
             }
         }
+    }
+
+    public SelenideElement getListMenuContainer(){
+        return listMenuContainer;
     }
 }
 

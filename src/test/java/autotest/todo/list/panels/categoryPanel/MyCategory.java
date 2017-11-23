@@ -40,14 +40,9 @@ public class MyCategory implements Panel {
         element.$(".delete").click();
         listCategory.shouldHave(CollectionCondition.size(initialCategorySize - 1));
     }
+
     public ElementsCollection getMyListCategory() {
 
         return myListCategory;
     }
-
-
-
-//    public String containerOfCategory(String listName) {
-//        return getByName(listName).$x("//*[@id=mylist_4]").getText();
-//    }
 }

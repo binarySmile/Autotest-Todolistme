@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 
+import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
@@ -29,8 +30,8 @@ public class MainPage {
 
 
     @Step("Create todo: {name}")
-    public void createNewTodo(String newTodoName) {
-        todoInput.val(newTodoName).pressEnter();
+    public void createNewTodo(String todoName) {
+        todoInput.val(todoName).pressEnter();
     }
 
     @Step("Create list: {name}")
@@ -45,6 +46,10 @@ public class MainPage {
         newNameInput.shouldBe(visible).val(categoryName).pressEnter();
     }
 
+    public SelenideElement todoInput(){
+        return todoInput.should(exist);
+    }
+
     public SelenideElement todoListTitleName() {
 
         return todoListTitle;
@@ -55,14 +60,14 @@ public class MainPage {
     }
 
     public SelenideElement sortButton() {
-        return sortButton;
+        return sortButton.should(exist);
     }
 
     public SelenideElement addListButton() {
-        return addNewTodoListButton;
+        return addNewTodoListButton.should(exist);
     }
 
     public SelenideElement addCategoryButton() {
-        return addNewCategoryButton;
+        return addNewCategoryButton.should(exist);
     }
 }

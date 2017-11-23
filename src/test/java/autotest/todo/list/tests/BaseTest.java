@@ -17,6 +17,7 @@ public class BaseTest {
 
     protected static Properties DATA;
     protected static final String URL = "http://todolistme.net/";
+    public String titleName = "Today's Tasks";
 
     public void initialize() throws Throwable {
         DATA = new Properties();

@@ -2,16 +2,14 @@ package autotest.todo.list.page;
 
 
 import autotest.todo.list.tests.BaseTest;
-import com.codeborne.selenide.CollectionCondition;
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.*;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.Set;
 
+import static com.codeborne.selenide.Condition.exist;
 import static com.sun.corba.se.impl.logging.OMGSystemException.get;
 
 public class PrintPage extends BaseTest  {
@@ -35,7 +33,7 @@ public class PrintPage extends BaseTest  {
     private SelenideElement newLine;
 
     public SelenideElement printButton() {
-        return printButton;
+        return printButton.should(exist);
     }
 
     public SelenideElement getBlanckcontrol() {
