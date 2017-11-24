@@ -1,10 +1,10 @@
-package autotest.todo.list.page;
+package autotest.todo.core.pageObjects.pages;
+
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 
-import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 
@@ -25,16 +25,16 @@ public class MainPage {
     @FindBy(id = "mytitle")
     private SelenideElement todoListTitle;
 
-    @FindBy(id = "sortbutton")
+    @FindBy(id ="sortbutton")
     private SelenideElement sortButton;
 
-
     @Step("Create todo: {name}")
-    public void createNewTodo(String todoName) {
-        todoInput.val(todoName).pressEnter();
+    public void createNewTodo(String newTodoName) {
+
+        todoInput.val(newTodoName).pressEnter();
     }
 
-    @Step("Create list: {name}")
+    @Step("Create core: {name}")
     public void createNewList(String listName) {
         addNewTodoListButton.click();
         newNameInput.val(listName).pressEnter();
@@ -46,9 +46,6 @@ public class MainPage {
         newNameInput.shouldBe(visible).val(categoryName).pressEnter();
     }
 
-    public SelenideElement todoInput(){
-        return todoInput.should(exist);
-    }
 
     public SelenideElement todoListTitleName() {
 
@@ -59,15 +56,16 @@ public class MainPage {
         return todoListTitle.shouldHave(text(todoListTitleName));
     }
 
-    public SelenideElement sortButton() {
-        return sortButton.should(exist);
+    public  SelenideElement sortButton(){
+        return sortButton;
     }
 
-    public SelenideElement addListButton() {
-        return addNewTodoListButton.should(exist);
+    public SelenideElement addListButton(){
+        return addNewTodoListButton;
     }
 
-    public SelenideElement addCategoryButton() {
-        return addNewCategoryButton.should(exist);
+    public SelenideElement addCategoryButton(){
+        return addNewCategoryButton;
     }
 }
+

@@ -1,8 +1,9 @@
-package autotest.todo.list.tests;
+package autotest.todo.tests;
 
-import autotest.todo.list.page.MainPage;
-import autotest.todo.list.panels.managerPanel.MyList;
-import autotest.todo.list.panels.todoPanel.ListPanel;
+
+import autotest.todo.core.pageObjects.pages.MainPage;
+import autotest.todo.core.pageObjects.panels.managerPanel.MyList;
+import autotest.todo.core.pageObjects.panels.todoPanel.ListPanel;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -16,7 +17,7 @@ public class ManagerPanelTest extends BaseTest {
         initialize();
     }
 
-    @Test(description = "Create list")
+    @Test(description = "Create core")
     public void createNewList() {
         MainPage mainPage = page(MainPage.class);
         mainPage.createNewList(getlistName());
@@ -24,7 +25,7 @@ public class ManagerPanelTest extends BaseTest {
         assertTrue(myList.getByName(getlistName()).isDisplayed());
     }
 
-    @Test(description = "Create todo in new list")
+    @Test(description = "Create todo in new core")
     public void createNewTodoInMyList() {
         MainPage mainPage = page(MainPage.class);
         mainPage.createNewList(getlistName());

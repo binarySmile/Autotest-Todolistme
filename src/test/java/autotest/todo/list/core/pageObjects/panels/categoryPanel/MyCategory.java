@@ -1,7 +1,7 @@
-package autotest.todo.list.panels.categoryPanel;
+package autotest.todo.core.pageObjects.panels.categoryPanel;
 
 
-import autotest.todo.list.panels.Panel;
+import autotest.todo.core.pageObjects.panels.Panel;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;

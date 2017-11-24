@@ -3,14 +3,15 @@
 <suite name="TestTodoListMe" verbose="2" >
     <test name="Test1" >
         <classes>
-            <class name="autotest.todo.list.tests.TodoPanelTest"/>
-            <class name="autotest.todo.list.tests.ManagerPanelTest"/>
-            <class name="autotest.todo.list.tests.CategoryPanelTest"/>
-            <class name="autotest.todo.list.tests.MoveTest"/>
-            <class name="autotest.todo.list.tests.OpenPageTest"/>
-            <class name="autotest.todo.list.tests.ListInRemoteWindowTest"/>
-            <class name="autotest.todo.list.tests.PrintTest"/>
-            <class name="autotest.todo.list.tests.TomorrowPanelTest"/>
+            <class name="autotest.todo.tests.OpenPageTest"/>
+            <class name="autotest.todo.tests.TodoPanelTest"/>
+            <class name="autotest.todo.tests.ManagerPanelTest"/>
+            <class name="autotest.todo.tests.CategoryPanelTest"/>
+            <class name="autotest.todo.tests.MoveTest"/>
+            <class name="autotest.todo.tests.SortTest"/>
+            <class name="autotest.todo.tests.PrintTest"/>
+            <class name="autotest.todo.tests.ListInRemoteWindowTest"/>
+            <class name="autotest.todo.tests.TomorrowPanelTest"/>
         </classes>
     </test>
 </suite>

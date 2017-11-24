@@ -1,8 +1,9 @@
-package autotest.todo.list.tests;
+package autotest.todo.tests;
 
-import autotest.todo.list.page.MainPage;
-import autotest.todo.list.panels.todoPanel.DonePanel;
-import autotest.todo.list.panels.todoPanel.ListPanel;
+
+import autotest.todo.core.pageObjects.pages.MainPage;
+import autotest.todo.core.pageObjects.panels.todoPanel.DonePanel;
+import autotest.todo.core.pageObjects.panels.todoPanel.ListPanel;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 

@@ -1,7 +1,7 @@
-package autotest.todo.list.panels.managerPanel;
+package autotest.todo.core.pageObjects.panels.managerPanel;
 
 
-import autotest.todo.list.panels.Panel;
+import autotest.todo.core.pageObjects.panels.Panel;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -30,7 +30,7 @@ public class MyList implements Panel {
         return listManager.filter(text(listName)).shouldHaveSize(1).last();
     }
 
-    @Step("Move list to category")
+    @Step("Move core to category")
     public void moveTodo(String listName) {
         getByName(listName).dragAndDropTo(myListCategory);
     }

@@ -1,7 +1,7 @@
-package autotest.todo.list.page;
+package autotest.todo.core.pageObjects.pages;
 
 
-import autotest.todo.list.tests.BaseTest;
+import autotest.todo.tests.BaseTest;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Step;
@@ -17,8 +17,8 @@ public class RemotePage extends BaseTest {
     @FindBy(id = "remotebutton")
     private SelenideElement remoteButton;
 
-    @FindBy(id="listmenucontainer")
-    public SelenideElement listMenuContainer;
+    @FindBy(id="listsmenu")
+    private SelenideElement listsMenu;
 
     @Step("Go from mainpage to remotepage")
     public void openRemotePage() throws InterruptedException {
@@ -31,13 +31,13 @@ public class RemotePage extends BaseTest {
             if (!mainPage.equalsIgnoreCase(child)) {
                 driver.switchTo().window(child);
                 Thread.sleep(3000);
+                driver.close();
             }
         }
     }
 
-    public SelenideElement getListMenuContainer(){
-        return listMenuContainer;
+    public SelenideElement getListsMenu(){
+        return listsMenu;
     }
 }
-
 

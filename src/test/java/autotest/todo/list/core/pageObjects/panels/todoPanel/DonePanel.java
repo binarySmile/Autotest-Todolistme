@@ -1,13 +1,15 @@
-package autotest.todo.list.panels.todoPanel;
+package autotest.todo.core.pageObjects.panels.todoPanel;
 
 
-import autotest.todo.list.panels.Panel;
+import autotest.todo.core.pageObjects.panels.Panel;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 
 public class DonePanel implements Panel {
 
@@ -28,7 +30,12 @@ public class DonePanel implements Panel {
     public void deleteTodo(String todoName) {
         getByName(todoName).hover();
         getByName(todoName).click();
-        getByName(todoName).$("img").click();
+        getByName(todoName).$x("//span").should(visible);
+        getByName(todoName).findElement(By.cssSelector("delete")).click();
+       // getByName(todoName).$("img").click();
     }
+
+
+
 }
 

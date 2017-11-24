@@ -1,4 +1,4 @@
-package autotest.todo.list.utils;
+package autotest.todo.core.utils;
 
 
 import lombok.Getter;

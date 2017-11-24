@@ -1,4 +1,4 @@
-package autotest.todo.list.panels;
+package autotest.todo.core.pageObjects.panels;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;

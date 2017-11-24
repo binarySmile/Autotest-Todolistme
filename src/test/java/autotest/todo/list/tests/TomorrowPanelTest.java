@@ -1,14 +1,14 @@
-package autotest.todo.list.tests;
+package autotest.todo.tests;
 
 
-import autotest.todo.list.panels.tomorrowPanel.TomorrowPanel;
+import autotest.todo.core.pageObjects.panels.tomorrowPanel.TomorrowPanel;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.page;
 import static org.testng.Assert.assertFalse;
 
-public class TomorrowPanelTest extends BaseTest{
+public class TomorrowPanelTest extends BaseTest {
 
     @BeforeTest
     public void beforeTest() throws Throwable {
@@ -16,7 +16,7 @@ public class TomorrowPanelTest extends BaseTest{
     }
 
     @Test
-    public void showTomorrowItemsPanel(){
+    public void showTomorrowItemsPanel() {
         TomorrowPanel tomorrowPanel = page(TomorrowPanel.class);
         tomorrowPanel.showTomorrowItems();
         assertFalse(tomorrowPanel.getTomorrowItemPanel().isDisplayed());

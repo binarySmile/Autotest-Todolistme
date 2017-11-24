@@ -1,7 +1,7 @@
-package autotest.todo.list.tests;
+package autotest.todo.tests;
 
 
-import autotest.todo.list.page.PrintPage;
+import autotest.todo.core.pageObjects.pages.PrintPage;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.page;
@@ -14,14 +14,14 @@ public class PrintTest extends BaseTest {
     public void printTodoList() throws InterruptedException {
         PrintPage printPage = page(PrintPage.class);
         printPage.openPrintPage();
-        assertTrue(printPage.getBlanckcontrol().isDisplayed());
+        assertTrue(printPage.getblanckcontrol().isDisplayed());
     }
 
     @Test(description = "Add new line in print page")
     public void addNewLineInPrintPage() throws InterruptedException {
         PrintPage printPage = page(PrintPage.class);
         printPage.openPrintPage();
-        assertTrue(printPage.getBlanckcontrol().isDisplayed());
+        assertTrue(printPage.getblanckcontrol().isDisplayed());
         printPage.addNewLine();
         assertTrue(printPage.getNewLine().isEnabled());
     }
@@ -30,7 +30,7 @@ public class PrintTest extends BaseTest {
     public void deleteNewLineFromPrintPage() throws InterruptedException {
         PrintPage printPage = page(PrintPage.class);
         printPage.openPrintPage();
-        assertTrue(printPage.getBlanckcontrol().isDisplayed());
+        assertTrue(printPage.getblanckcontrol().isDisplayed());
         printPage.addNewLine();
         assertTrue(printPage.getNewLine().isEnabled());
         printPage.deleteNewLine();

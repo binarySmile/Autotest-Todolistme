@@ -1,9 +1,10 @@
-package autotest.todo.list.tests;
+package autotest.todo.tests;
 
-import autotest.todo.list.page.MainPage;
-import autotest.todo.list.panels.categoryPanel.MyCategory;
-import autotest.todo.list.panels.managerPanel.MyList;
-import autotest.todo.list.panels.todoPanel.ListPanel;
+
+import autotest.todo.core.pageObjects.pages.MainPage;
+import autotest.todo.core.pageObjects.panels.categoryPanel.MyCategory;
+import autotest.todo.core.pageObjects.panels.managerPanel.MyList;
+import autotest.todo.core.pageObjects.panels.todoPanel.ListPanel;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -19,7 +20,7 @@ public class MoveTest extends BaseTest {
         initialize();
     }
 
-    @Test(description = "Move list to category")
+    @Test(description = "Move core to category")
     public void moveTodoListToCategory() {
         MainPage mainPage = page(MainPage.class);
         mainPage.createNewList(getlistName());

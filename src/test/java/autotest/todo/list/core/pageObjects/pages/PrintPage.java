@@ -1,18 +1,20 @@
-package autotest.todo.list.page;
+package autotest.todo.core.pageObjects.pages;
 
 
-import autotest.todo.list.tests.BaseTest;
-import com.codeborne.selenide.*;
+import autotest.todo.tests.BaseTest;
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.Set;
 
-import static com.codeborne.selenide.Condition.exist;
 import static com.sun.corba.se.impl.logging.OMGSystemException.get;
 
-public class PrintPage extends BaseTest  {
+public class PrintPage extends BaseTest {
 
     @FindBy(id = "printbutton")
     private SelenideElement printButton;
@@ -33,10 +35,10 @@ public class PrintPage extends BaseTest  {
     private SelenideElement newLine;
 
     public SelenideElement printButton() {
-        return printButton.should(exist);
+        return printButton;
     }
 
-    public SelenideElement getBlanckcontrol() {
+    public SelenideElement getblanckcontrol() {
         return blackcontrol;
     }
 
@@ -47,6 +49,8 @@ public class PrintPage extends BaseTest  {
     public SelenideElement getNewLine(){
         return newLine;
     }
+
+
 
     @Step("Add new line in print page")
     public void addNewLine() {
@@ -69,7 +73,7 @@ public class PrintPage extends BaseTest  {
         get(URL);
         String parent = driver.getWindowHandle();
         printButton.click();
-        Set <String> windows = driver.getWindowHandles();
+        Set<String> windows = driver.getWindowHandles();
         for (String child : windows) {
             if (!parent.equalsIgnoreCase(child)) {
                 driver.switchTo().window(child);

@@ -1,4 +1,4 @@
-package autotest.todo.list.tests;
+package autotest.todo.tests;
 
 
 import com.codeborne.selenide.Configuration;

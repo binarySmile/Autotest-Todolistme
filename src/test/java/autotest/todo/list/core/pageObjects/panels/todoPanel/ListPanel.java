@@ -1,11 +1,13 @@
-package autotest.todo.list.panels.todoPanel;
+package autotest.todo.core.pageObjects.panels.todoPanel;
 
-import autotest.todo.list.page.MainPage;
-import autotest.todo.list.panels.Panel;
+import autotest.todo.core.pageObjects.pages.MainPage;
+import autotest.todo.core.pageObjects.panels.Panel;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.ArrayList;
 
 import static com.codeborne.selenide.Condition.text;
 
@@ -43,27 +45,27 @@ public class ListPanel extends MainPage implements Panel {
     }
 
 
-    public ElementsCollection normalSortList() {
+    public ArrayList<String> normalSortList() {
         sortButton().hover();
         normal.click();
-        return todosList;
+        return new ArrayList <String>(todosList.texts());
     }
 
-    public ElementsCollection alphabeticalSortList() {
+    public ArrayList<String> alphabeticalSortList() {
         sortButton().hover();
         alphabetical.click();
-        return todosList;
+        return new ArrayList <String>(todosList.texts());
     }
 
-    public ElementsCollection randomSortList() {
+    public ArrayList<String> randomSortList() {
         sortButton().hover();
         random.click();
-        return todosList;
+        return new ArrayList <String>(todosList.texts());
     }
 
-    public ElementsCollection top3SortList() {
+    public ArrayList<String> top3SortList() {
         sortButton().click();
         top3.click();
-        return todosList;
+        return new ArrayList <String>(todosList.texts());
     }
 }

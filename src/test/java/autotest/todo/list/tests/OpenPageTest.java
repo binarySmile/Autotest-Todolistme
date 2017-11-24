@@ -1,8 +1,8 @@
-package autotest.todo.list.tests;
+package autotest.todo.tests;
 
 
-import autotest.todo.list.page.MainPage;
-import autotest.todo.list.page.PrintPage;
+import autotest.todo.core.pageObjects.pages.MainPage;
+import autotest.todo.core.pageObjects.pages.PrintPage;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.page;
@@ -15,13 +15,6 @@ public class OpenPageTest extends BaseTest {
         MainPage mainPage = page(MainPage.class);
         mainPage.todoListTitleName();
         assertTrue(mainPage.getByName(titleName).isDisplayed());
-    }
-
-    @Test
-    public void checkActivityOfInputField(){
-        MainPage mainPage = page(MainPage.class);
-        mainPage.todoInput();
-        assertTrue(mainPage.todoInput().isDisplayed());
     }
 
     @Test

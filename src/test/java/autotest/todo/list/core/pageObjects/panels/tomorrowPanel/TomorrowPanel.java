@@ -1,4 +1,4 @@
-package autotest.todo.list.panels.tomorrowPanel;
+package autotest.todo.core.pageObjects.panels.tomorrowPanel;
 
 
 import com.codeborne.selenide.SelenideElement;
