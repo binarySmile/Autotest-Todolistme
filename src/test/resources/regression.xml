@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression tests" >
+    <test name="Tests" >
+        <classes>
+            <class name="com.github.binarySmile.todolistmeautotest.tests.OpenPageTest"/>
+            <class name="com.github.binarySmile.todolistmeautotest.tests.TodoPanelTest"/>
+            <class name="com.github.binarySmile.todolistmeautotest.tests.ManagerPanelTest"/>
+            <class name="com.github.binarySmile.todolistmeautotest.tests.CategoryPanelTest"/>
+            <class name="com.github.binarySmile.todolistmeautotest.tests.MoveTest"/>
+            <class name="com.github.binarySmile.todolistmeautotest.tests.SortTest"/>
+            <class name="com.github.binarySmile.todolistmeautotest.tests.PrintTest"/>
+            <class name="com.github.binarySmile.todolistmeautotest.tests.ListInRemoteWindowTest"/>
+            <class name="com.github.binarySmile.todolistmeautotest.tests.TomorrowPanelTest"/>
+        </classes>
+    </test>
+</suite>

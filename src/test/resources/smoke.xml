@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Smoke tests" >
+    <test name="Tests" >
+        <classes>
+            <class name="com.github.binarySmile.todolistmeautotest.tests.OpenPageTest"/>
+            <class name="com.github.binarySmile.todolistmeautotest.tests.TodoPanelTest"/>
+            <class name="com.github.binarySmile.todolistmeautotest.tests.ManagerPanelTest"/>
+            <class name="com.github.binarySmile.todolistmeautotest.tests.CategoryPanelTest"/>
+        </classes>
+    </test>
+</suite>
