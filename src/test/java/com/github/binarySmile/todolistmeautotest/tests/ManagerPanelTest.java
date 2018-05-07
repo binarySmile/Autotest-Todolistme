@@ -11,24 +11,24 @@ import static org.testng.Assert.assertTrue;
 
 public class ManagerPanelTest extends BaseTest {
 
-    @Test(description = "Create core")
+    @Test(description = "Create new list")
     public void createNewList() {
         MainPage mainPage = page(MainPage.class);
-        mainPage.createNewList(getlistName());
+        mainPage.createNewList(getListName());
         MyList myList = page(MyList.class);
-        assertTrue(myList.getByName(getlistName()).isDisplayed());
+        assertTrue(myList.getByName(getListName()).isDisplayed());
     }
 
-    @Test(description = "Create todo in new core")
+    @Test(description = "Create todo in new list")
     public void createNewTodoInMyList() {
         MainPage mainPage = page(MainPage.class);
-        mainPage.createNewList(getlistName());
+        mainPage.createNewList(getListName());
         MyList myList = page(MyList.class);
-        assertTrue(myList.getByName(getlistName()).isDisplayed());
-        mainPage.createNewTodo(gettodoInMyList());
+        assertTrue(myList.getByName(getListName()).isDisplayed());
+        mainPage.createNewTodo(getTodoInMyList());
         ListPanel listPanel = page(ListPanel.class);
-        assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
-        listPanel.completeTodo(gettodoInMyList());
-        assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
+        assertTrue(listPanel.getByName(getTodoInMyList()).isDisplayed());
+        listPanel.completeTodo(getTodoInMyList());
+        assertTrue(listPanel.getByName(getTodoInMyList()).isDisplayed());
     }
 }

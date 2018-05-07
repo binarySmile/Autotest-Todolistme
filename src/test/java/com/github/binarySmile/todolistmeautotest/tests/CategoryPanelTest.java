@@ -13,18 +13,18 @@ public class CategoryPanelTest extends BaseTest {
     @Test(description = "Create category")
     public void createCategory() {
         MainPage mainPage = page(MainPage.class);
-        mainPage.createNewCategory(getcategoryName());
+        mainPage.createNewCategory(getCategoryName());
         CategoryPanel myCategory = page(CategoryPanel.class);
-        assertTrue(myCategory.getByName(getcategoryName()).isDisplayed());
+        assertTrue(myCategory.getByName(getCategoryName()).isDisplayed());
     }
 
     @Test(description = "Delete category")
     public void deleteCategory() {
         MainPage mainPage = page(MainPage.class);
-        mainPage.createNewCategory(getcategoryName());
+        mainPage.createNewCategory(getCategoryName());
         CategoryPanel myCategory = page(CategoryPanel.class);
-        assertTrue(myCategory.getByName(getcategoryName()).isDisplayed());
-        myCategory.deleteCategory(getcategoryName());
+        assertTrue(myCategory.getByName(getCategoryName()).isDisplayed());
+        myCategory.deleteCategory(getCategoryName());
         assertTrue(myCategory.getMyListCategory().isEmpty());
     }
 }

@@ -40,19 +40,19 @@ public class BaseTest {
         close();
     }
 
-    protected String gettodoName() {
+    protected String getTodoName() {
         return DATA.getProperty("TODO_NAME");
     }
 
-    protected String getlistName() {
+    protected String getListName() {
         return DATA.getProperty("LIST_NAME");
     }
 
-    protected String gettodoInMyList() {
+    protected String getTodoInMyList() {
         return DATA.getProperty("TODO_NAME_IN_MY_LIST");
     }
 
-    protected String getcategoryName() {
+    protected String getCategoryName() {
         return DATA.getProperty("CATEGORY_NAME");
     }
 }

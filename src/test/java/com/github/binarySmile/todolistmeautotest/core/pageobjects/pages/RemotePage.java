@@ -29,7 +29,7 @@ public class RemotePage extends BaseTest {
         for (String child : windows) {
             if (!mainPage.equalsIgnoreCase(child)) {
                 driver.switchTo().window(child);
-                Thread.sleep(3000);
+                Thread.sleep(5000);
                 driver.close();
             }
         }

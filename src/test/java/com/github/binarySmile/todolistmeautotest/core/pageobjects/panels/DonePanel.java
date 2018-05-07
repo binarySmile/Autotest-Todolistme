@@ -15,7 +15,7 @@ public class DonePanel implements Panel {
     private ElementsCollection doneList;
 
     public ElementsCollection getList() {
-        return doneList;
+        return doneList.shouldHaveSize(0);
     }
 
     public SelenideElement getByName(String todoName) {
@@ -27,7 +27,7 @@ public class DonePanel implements Panel {
         getByName(todoName).hover();
         getByName(todoName).click();
         getByName(todoName).$x("//span").should(visible);
-        getByName(todoName).findElement(By.cssSelector("delete")).click();
+        getByName(todoName).findElement(By.cssSelector(".delete")).click();
     }
 }
 

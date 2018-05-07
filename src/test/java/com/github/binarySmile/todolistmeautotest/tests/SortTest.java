@@ -11,7 +11,7 @@ import static org.testng.Assert.assertTrue;
 
 public class SortTest extends BaseTest {
 
-    @Test(description = "Sort todo core")
+    @Test(description = "Sort todo")
     public void sortTodosList() {
         ListPanel listPanel = page(ListPanel.class);
         assertTrue(firstSort(listPanel.alphabeticalSortList()));

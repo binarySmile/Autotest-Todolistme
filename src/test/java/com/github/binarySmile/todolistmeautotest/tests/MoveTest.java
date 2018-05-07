@@ -12,21 +12,21 @@ import static org.testng.Assert.assertTrue;
 
 public class MoveTest extends BaseTest {
 
-    @Test(description = "Move core to category")
+    @Test(description = "Move list to category")
     public void moveTodoListToCategory() {
         MainPage mainPage = page(MainPage.class);
-        mainPage.createNewList(getlistName());
+        mainPage.createNewList(getListName());
         MyList myList = page(MyList.class);
-        assertTrue(myList.getByName(getlistName()).isDisplayed());
-        mainPage.createNewTodo(gettodoInMyList());
+        assertTrue(myList.getByName(getListName()).isDisplayed());
+        mainPage.createNewTodo(getTodoInMyList());
         ListPanel listPanel = page(ListPanel.class);
-        assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
-        listPanel.completeTodo(gettodoInMyList());
-        assertTrue(listPanel.getByName(gettodoInMyList()).isDisplayed());
-        mainPage.createNewCategory(getcategoryName());
+        assertTrue(listPanel.getByName(getTodoInMyList()).isDisplayed());
+        listPanel.completeTodo(getTodoInMyList());
+        assertTrue(listPanel.getByName(getTodoInMyList()).isDisplayed());
+        mainPage.createNewCategory(getCategoryName());
         CategoryPanel myCategory = page(CategoryPanel.class);
-        assertTrue(myCategory.getByName(getcategoryName()).isDisplayed());
-        myList.moveTodo(getlistName());
-        assertTrue(myList.getByName(getlistName()).isDisplayed());
+        assertTrue(myCategory.getByName(getCategoryName()).isDisplayed());
+        myList.moveTodo(getListName());
+        assertTrue(myList.getByName(getListName()).isDisplayed());
     }
 }

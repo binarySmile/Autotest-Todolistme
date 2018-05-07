@@ -9,7 +9,7 @@ import static org.testng.Assert.assertTrue;
 
 public class ListInRemoteWindowTest extends BaseTest {
 
-    @Test(description = "Open Remote core")
+    @Test(description = "Open Remote window")
     public void openRemoteList() throws InterruptedException {
         RemotePage remotePage = page(RemotePage.class);
         remotePage.openRemotePage();
